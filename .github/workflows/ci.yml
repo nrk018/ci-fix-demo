@@ -1,0 +1,12 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install
+        run: |
+          echo "Affected file: requirements.txt"
+          echo "ERROR: dependency resolution failed: cannot satisfy pinned versions numpy==1.24.0 pandas==2.2.0 resolver backtracked"
+          exit 1
